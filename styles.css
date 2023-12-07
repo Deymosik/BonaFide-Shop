@@ -16,8 +16,11 @@ body{
     /*background: url('img/аппв.jpg') no-repeat fixed center;
     background-size: cover;*/
     background-color: #f2f2f2;
+    overflow-x: hidden;
 }
-
+html{
+    overflow-x: hidden;
+}
 /* Стили для шапки */
 header {
     background-color: #333;
@@ -29,8 +32,9 @@ header {
 /* Стили для основного контента */
 main {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
 }
 
 /* Пример стилей для ссылок */
@@ -109,13 +113,6 @@ a:hover {
     transition: 0.3s;
 }
 
-.product-item:hover img {
-    transform: scale(1.1);
-}
-
-.product-item:hover p {
-    font-weight: bold;
-}
 .product-category {
     max-width: 800px;
     margin: 20px auto;
@@ -140,6 +137,7 @@ a:hover {
     background-color: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0 0 11px 0px rgb(0 0 0 / 25%);
+    max-width: 140px;
 }
 
 .product-card img {
@@ -174,37 +172,36 @@ a:hover {
 .buy-btn:hover {
     background-color: #0056b3;
 }
-.carousel-container {
-    width: 100%; /* Установите ширину вашего контейнера по вашему усмотрению */
+
+.slider-container {
+    margin-bottom: 10px;
     overflow: hidden;
 }
 
-.carousel {
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    flex: 0 0 31.1%;
-    box-sizing: border-box;
-    background-color: #007BFF;
-    color: #fff;
+    flex: 0 0 calc(33.333% - 10px); /* 33.333% - 10px, чтобы уместить 3 блока на экране с отступами */
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 100px; /* Высота блока */
     text-align: center;
-    margin-right: 10px;
-    border-radius: 10px;
-    height: 105px;
+    line-height: 100px; /* Выравнивание по центру */
+    background-color: #007BFF;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
 }
-.slide img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
+
 
 
 .icon-cards {
     position: relative;
     width: 60vw;
-    height: 40vw;
+    height: 25vw;
     max-width: 380px;
     max-height: 250px;
     margin: 15px;
@@ -233,7 +230,7 @@ a:hover {
     right: 0;
     bottom: 0;
     width: 60vw;
-    height: 40vw;
+    height: 25vw;
     max-width: 380px;
     max-height: 250px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);

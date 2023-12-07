@@ -7,20 +7,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector('.carousel');
-    let currentIndex = 0;
+    const slider = document.querySelector('.slider');
 
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % 4; // 6 - количество слайдов
-        updateCarousel();
-    }, 3000); // Интервал смены слайдов, в данном случае каждые 2 секунды
-
-    function updateCarousel() {
-        const translateValue = -currentIndex * 34;
-        carousel.style.transform = `translateX(${translateValue}%)`;
-    }
+        const firstSlide = slider.children[0];
+        slider.style.transition = "transform 0.5s ease-in-out";
+        slider.style.transform = "translateX(-" + (firstSlide.offsetWidth + 10) + "px)"; /* 10px - отступ между блоками */
+        
+        setTimeout(() => {
+            slider.style.transition = "none";
+            slider.appendChild(firstSlide);
+            slider.style.transform = "translateX(0)";
+        }, 500); /* 0.5 секунды, согласно значению transition */
+    }, 3000); /* 3 секунды, согласно вашему требованию */
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
