@@ -7,16 +7,28 @@
     <title>BonaFide Shop</title>
     <!-- Подключение ваших стилей -->
     <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>BonaFide Shop</h1>
-        <!-- Добавьте дополнительные элементы шапки, если необходимо -->
-    </header>
-
     <main>
+        <div class="user-block">
+            <img src="img/ava.png" class="avatar-с">
+            <h3 class="user-name" id="user_name">Имя пользователя</h3>
+            <div class="user-info">
+                <button class="channel-button">Наш канал</button>
+            </div>
+        </div>
 
+        <script>
+            let tg = window.Telegram.WebApp;
+            let buy = document.getElementById("buy");
+            let order = document.getElementById("order");
+
+            buy.addEventListener("click", () => {
+                document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+            });
+        </script>
 
         <div class="slider-container">
             <div class="slider">
@@ -55,13 +67,13 @@
                 </div>
                 <div class="product-item">
                     <a href="#w-section" class="smooth-scroll">
-                        <img src="img/Naushniki.png" alt="Product 2">
+                        <img src="img/watch.png" alt="Product 2">
                         <p>Часы</p>
                     </a>
                 </div>
                 <div class="product-item">
                     <a href="#e-section" class="smooth-scroll">
-                        <img src="img/Naushniki.png" alt="Product 3">
+                        <img src="img/usb.png" alt="Product 3">
                         <p>Аксуссуары</p>
                     </a>
                 </div>

@@ -15,18 +15,11 @@ p {
 body{
     /*background: url('img/аппв.jpg') no-repeat fixed center;
     background-size: cover;*/
-    background-color: #f2f2f2;
+    background-color: rgb(0, 47, 82);
     overflow-x: hidden;
 }
 html{
     overflow-x: hidden;
-}
-/* Стили для шапки */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
 }
 
 /* Стили для основного контента */
@@ -80,7 +73,7 @@ a:hover {
 
 .product-section h2 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 .product-container {
@@ -98,12 +91,12 @@ a:hover {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 35%;
     border: 2px solid #007BFF;
 }
 
 .product-item p {
-    color: #333;
+    color: #ffffff;
     font-size: 10px;
 }
 
@@ -120,7 +113,7 @@ a:hover {
 
 .product-category h2 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 .product-grid {
@@ -357,4 +350,38 @@ a:hover {
 .comment-text {
     margin: 0;
     font-size: 10px;
+}
+.user-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar-с {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-name {
+    padding: 10px;
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+}
+
+.channel-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 15px;
 }
