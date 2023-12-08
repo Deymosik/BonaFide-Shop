@@ -133,20 +133,27 @@ a:hover {
 .product-card {
     text-align: center;
     margin-bottom: 20px;
-    padding: 0 0 10px 0;
     background-color: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0 0 11px 0px rgb(0 0 0 / 25%);
-    max-width: 140px;
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card img {
     width: 100%;
-    max-height: 105px;
     object-fit: cover;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin-bottom: 10px;
+}
+
+.product-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
 }
 
 .product-title {
@@ -164,9 +171,11 @@ a:hover {
     color: #fff;
     padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     cursor: pointer;
-    width: 90%;
+    width: 100%;
+    font-family: Exo2;
 }
 
 .buy-btn:hover {
@@ -193,7 +202,7 @@ a:hover {
     background-color: #007BFF;
     color: white;
     font-size: 24px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 
@@ -201,7 +210,7 @@ a:hover {
 .icon-cards {
     position: relative;
     width: 60vw;
-    height: 25vw;
+    height: 30vw;
     max-width: 380px;
     max-height: 250px;
     margin: 15px;
@@ -230,11 +239,11 @@ a:hover {
     right: 0;
     bottom: 0;
     width: 60vw;
-    height: 25vw;
+    height: 34vw;
     max-width: 380px;
     max-height: 250px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
+    border-radius: 10px;
     transform-origin: center;
   }
   .icon-cards__item:nth-child(1) {
@@ -261,7 +270,7 @@ a:hover {
     background: #48b3fb;
     transform: rotateY(300deg) translateZ(55vw);
   }
-  
+
   @-webkit-keyframes carousel {
     0%, 16.6% {
         transform: translateZ(-55vw) rotateY(0);
@@ -308,3 +317,44 @@ a:hover {
     display: flex;
     justify-content: center;
   }
+
+  .comment {
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.user-name {
+    margin: 0 0 3px;
+    font-size: 10px;
+}
+
+.photos {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.photo {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.comment-text {
+    margin: 0;
+    font-size: 10px;
+}

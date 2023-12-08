@@ -23,7 +23,7 @@ main {
     overflow: hidden;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: aquamarine;
+    background-color: rgb(16, 93, 67);
 }
 
 .slides {
@@ -162,3 +162,26 @@ audio {
     width: 100%;
     max-width: 400px;
 }
+.slider-containerr {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.sliderr {
+    display: flex;
+}
+
+.slidi {
+    flex: 0 0 calc(33.333% - 10px); /* 33.333% - 10px, чтобы уместить 3 блока на экране с отступами */
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 100px; /* Высота блока */
+    text-align: center;
+    line-height: 100px; /* Выравнивание по центру */
+    background-color: #007BFF;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+
