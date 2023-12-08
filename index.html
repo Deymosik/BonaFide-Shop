@@ -21,17 +21,18 @@
         </div>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
-            let tg = window.Telegram.WebApp;
-            let buy = document.getElementById("buy");
-            let order = document.getElementById("order");
+            let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
-            buy.addEventListener("click", () => {
-                document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
-            });
+            let profName = document.createElement('p'); //создаем параграф
+            profName.innerText = `${tg.initDataUnsafe.user.first_name}
+            ${tg.initDataUnsafe.user.last_name}
+            ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+            //выдем имя, "фамилию", через тире username и код языка
+            usercard.appendChild(user_name); //добавляем 
 
-            order.addEventListener("click", () => {
-                tg.close();
-            });
+            let userid = document.createElement('p'); //создаем еще параграф 
+            userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+            usercard.appendChild(userid); //добавляем
         </script>
 
         <div class="slider-container">
