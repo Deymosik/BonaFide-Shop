@@ -14,25 +14,14 @@
         <div class="user-block">
             <img src="img/ava.png" class="avatar-с">
             <h3 class="user-name" id="user_name"></h3>
-            <input type="text" id="user_name" placeholder="имя" class="user-name">
+            <div id="userName" ></div>
             <div class="user-info">
                 <button class="channel-button">Наш канал</button>
             </div>
         </div>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
-            let usercard = document.getElementById("usercard"); //получаем блок usercard 
-
-            let profName = document.createElement('p'); //создаем параграф
-            profName.innerText = `${tg.initDataUnsafe.user.first_name}
-            ${tg.initDataUnsafe.user.last_name}
-            ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
-            //выдем имя, "фамилию", через тире username и код языка
-            usercard.appendChild(user_name); //добавляем 
-
-            let userid = document.createElement('p'); //создаем еще параграф 
-            userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-            usercard.appendChild(userid); //добавляем
+            document.GetElementById("userName").innerText = tg.initData.user.first_name;
         </script>
 
         <div class="slider-container">
