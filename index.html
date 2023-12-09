@@ -21,6 +21,7 @@
         </div>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
         <script>
+            let tg = window.Telegram.WebApp;
             document.GetElementById("userName").innerText = tg.initData.user.first_name;
         </script>
 
