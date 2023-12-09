@@ -79,3 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+let tg = window.Telegram.WebApp;
+
+let userName = document.getElementById('userName');
+
+let p = document.createElement('p');
+
+p.innerText = `${tg.initDataUnsafe.first_name}`
+`${tg.initDataUnsafe.last_name}`
+
+userName.appendChild(p);
