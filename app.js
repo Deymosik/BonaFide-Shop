@@ -98,18 +98,16 @@ document.addEventListener('DOMContentLoaded', function() {
     Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
 
     // Сообщаем Telegram Web App, что мы хотим перехватить действие "Назад"
-    Telegram.WebApp.BackButton.onClick(() => {
-        // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
-        // Например, вернуть пользователя на предыдущую страницу:
-        window.history.back();
-
-        // Или закрыть WebApp:
-        Telegram.WebApp.close();
-    });
+    Telegram.WebApp.BackButton.onClick(Backkk());
 });
 
 function Backkk(){
+    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
+    // Например, вернуть пользователя на предыдущую страницу:
     window.history.back();
+
+    // Или закрыть WebApp:
+    Telegram.WebApp.close();
 }
 
 
