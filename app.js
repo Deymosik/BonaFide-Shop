@@ -95,4 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  var BackButton = Telegram.WebApp.BackButton;
+BackButton.show();
+BackButton.onClick(function() {
+  WebApp.showAlert("Нет пути назад!");
+  BackButton.hide();
+});
+WebApp.onEvent('backButtonClicked', function() {
+  /* код */
+});
 
