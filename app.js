@@ -87,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const user = Telegram.WebApp.initDataUnsafe.user;
     if (user) {
       // Теперь у нас есть доступ к данным пользователя, например, к имени
-      const username = user.first_name; // Пример использования имени
-      
+      const username = user.first_name +" "+ user.last_name; // Пример использования имени
       // Вставляем имя в элемент div с id="username"
       document.getElementById('username').textContent = username;
     } else {
