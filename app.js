@@ -104,8 +104,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.history.back();
 
         // Или закрыть WebApp:
-        //Telegram.WebApp.close();
+        Telegram.WebApp.close();
     });
 });
+
+function Backkk(){
+    window.history.back();
+}
 
 
