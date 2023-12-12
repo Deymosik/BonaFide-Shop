@@ -85,7 +85,15 @@ let userName = document.getElementById('userName');
 
 let p = document.createElement('p');
 
+try{
+    let un = tg.initDataUnsafe.user.first_name();
+    console.log(un);
 p.innerText = `${tg.initDataUnsafe.user.first_name}`
 `${tg.initDataUnsafe.user.last_name}`
-
 userName.appendChild(p);
+}
+catch(e){
+    p.innerText = e;
+    userName.appendChild(p);
+}
+
