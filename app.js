@@ -79,21 +79,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-let tg = window.Telegram.WebApp;
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, что Telegram WebApp SDK был успешно загружен
+    if (window.Telegram.WebApp) {
+        // Инициализируем WebApp
+        Telegram.WebApp.init();
 
-let userName = document.getElementById('userName');
+        // Получаем данные пользователя
+        const user = Telegram.WebApp.initDataUnsafe.user;
+        if (user) {
+            // Теперь мы имеем доступ к данным пользователя, например, к имени
+            const username = user.first_name; // Пример использования имени
 
-let p = document.createElement('p');
+            // Вставляем имя в элемент div с id="username"
+            document.getElementById('username').textContent = username;
+        } else {
+            console.log("Пользовательские данные недоступны.");
+        }
+    }
+});
 
-try{
-    let un = tg.initDataUnsafe.user.first_name();
-    console.log(un);
-p.innerText = `${tg.initDataUnsafe.user.first_name}`
-`${tg.initDataUnsafe.user.last_name}`
-userName.appendChild(p);
-}
-catch(e){
-    p.innerText = e;
-    userName.appendChild(p);
-}
 
