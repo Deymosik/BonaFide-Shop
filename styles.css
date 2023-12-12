@@ -15,7 +15,7 @@ p {
 body{
     /*background: url('img/аппв.jpg') no-repeat fixed center;
     background-size: cover;*/
-    background-color: rgb(0, 47, 82);
+    background-color: #414141;
     overflow-x: hidden;
 }
 html{
@@ -28,6 +28,13 @@ main {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+}
+
+#username {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Пример стилей для ссылок */
