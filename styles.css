@@ -31,8 +31,8 @@ main {
 }
 
 #username {
-    font-size: 20px;
-    color: #fff;
+    font-size: 20px !important;
+    color: white !important;
     margin-left: 10px;
     margin-right: 10px;
 }
