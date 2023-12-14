@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Или закрыть WebApp:
             Telegram.WebApp.close();
         });
+
+        let bg = Telegram.WebApp.bg_color;
+        console.log(bg);
     });
     
 
