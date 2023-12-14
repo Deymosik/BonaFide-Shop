@@ -33,7 +33,7 @@ main {
 #username {
     font-size: 20px !important;
     color: var(--tg-theme-text-color);
-    margin-right: 10px;
+    margin-left: 6px;
 }
 
 /* Пример стилей для ссылок */
@@ -353,7 +353,7 @@ a:hover {
 .user-block {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -383,5 +383,9 @@ a:hover {
     color: var(--tg-theme-button-text-color);
     border: none;
     border-radius: 15px;
+}
+.priv {
+    display: flex;
+    flex-direction: row;
 }
 
