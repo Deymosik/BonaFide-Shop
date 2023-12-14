@@ -33,7 +33,6 @@ main {
 #username {
     font-size: 20px !important;
     color: var(--tg-theme-text-color);
-    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -130,7 +129,7 @@ a:hover {
 .product-card {
     text-align: center;
     margin-bottom: 20px;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 11px 0px rgb(0 0 0 / 25%);
     max-width: 160px;
