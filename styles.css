@@ -141,8 +141,7 @@ a:hover {
 .product-card img {
     width: 100%;
     object-fit: cover;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 10px;
 }
 
 .product-name{
@@ -154,12 +153,12 @@ a:hover {
 }
 
 .product-title {
-    font-size: 16px;
-    color: var(--tg-theme-text-color);
+    font-size: 14px;
+    color: var(--tg-theme-hint-color);
 }
 
 .product-price {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--tg-theme-text-color);
 }
 

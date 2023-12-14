@@ -15,7 +15,7 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     keyboard = InlineKeyboardMarkup()
-    web_button = InlineKeyboardButton("Открыть веб-приложение", url='http://127.0.0.1:5000/')
+    web_button = InlineKeyboardButton("Открыть веб-приложение", url='t.me/BonaFide55_Bot/BF55')
     keyboard.add(web_button)
     await message.answer("Привет! Это ваш бот на aiogram.", reply_markup=keyboard)
 
