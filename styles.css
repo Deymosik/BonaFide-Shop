@@ -88,6 +88,7 @@ a:hover {
 
 .product-item {
     text-align: center;
+    background-color: var(--tg-theme-secondary-bg-color);
 }
 
 .product-item img {
@@ -96,7 +97,6 @@ a:hover {
     object-fit: cover;
     border-radius: 35%;
     border: 2px solid var(--tg-theme-secondary-bg-color);
-    background-color: var(--tg-theme-secondary-bg-color);
 }
 
 .product-item p {
