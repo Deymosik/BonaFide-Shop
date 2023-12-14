@@ -107,9 +107,20 @@ document.addEventListener('DOMContentLoaded', function() {
             Telegram.WebApp.close();
         });
 
-        let bg = Telegram.WebApp.bg_color;
-        console.log(bg);
+        Telegram.WebApp.expand();
+
+        
+        
+        
     });
+    Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
+    let bg = Telegram.WebApp.colorScheme;
+    if(bg === "light") {
+        
+    }
+    else {
+
+    }
     
 
 
