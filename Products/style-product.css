@@ -7,7 +7,7 @@ body {
     font-family: Exo2;
     line-height: 1.5;
     margin: 0;
-    background-color: #94cef5;
+    background-color: var(--tg-theme-bg-color);
     overflow-x: hidden;
 
 }
@@ -18,12 +18,10 @@ main {
 
 .slideshow-container {
     position: relative;
-    
     margin: auto;
     overflow: hidden;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgb(16, 93, 67);
 }
 
 .slides {
@@ -67,14 +65,14 @@ a.prev:hover, a.next:hover {
 }
 .product-info {
     display: flex;
-    color: #fff;
+    color: var(--tg-theme-text-color);
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
 .product-info h2{
   margin: 0;
-  color: #111;
+  color: var(--tg-theme-text-color);
 }
 .product-info h3{
    margin: 0;
@@ -100,9 +98,9 @@ a.prev:hover, a.next:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  color: #fff;
+  color: var(--tg-theme-text-color);
   font-weight: 500;
-  background-color: #5680e9;
+  background-color: var(--tg-theme-secondary-bg-color);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transition: background-color 0.2s ease-out;
@@ -132,10 +130,10 @@ a.prev:hover, a.next:hover {
     
 .accordion__content {
   padding: 0.75rem 1rem;
-  background: #ccc;
+  background: var(--tg-theme-secondary-bg-color);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  color: #f2f2f2;
+  color: var(--tg-theme-text-color);
 }
 .accordion__content p {
 margin: 0;
@@ -151,7 +149,7 @@ margin: 0;
 }
 .microphone-test-container h3{
    margin: 0;
-   color: #111;
+   color: var(--tg-theme-text-color);
   }
         
 .audio-container {
@@ -178,8 +176,8 @@ audio {
     height: 100px; /* Высота блока */
     text-align: center;
     line-height: 100px; /* Выравнивание по центру */
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
     font-size: 24px;
     border-radius: 10px;
 }
