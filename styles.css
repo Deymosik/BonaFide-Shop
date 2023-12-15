@@ -42,9 +42,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -96,7 +93,6 @@ a:hover {
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid var(--tg-theme-secondary-bg-color);
-    background-color: var(--tg-theme-secondary-bg-color);
 }
 
 .product-item p {
@@ -105,10 +101,7 @@ a:hover {
 }
 
 /* Добавленные стили для круглых кнопок */
-.product-item img,
-.product-item p {
-    transition: 0.3s;
-}
+
 
 .product-category {
     max-width: 800px;
@@ -141,8 +134,8 @@ a:hover {
 .product-card img {
     width: 100%;
     object-fit: cover;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .product-name{
