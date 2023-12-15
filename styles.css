@@ -20,6 +20,7 @@ body{
 }
 html{
     overflow-x: hidden;
+    max-width: 600px;
 }
 
 /* Стили для основного контента */
@@ -385,3 +386,41 @@ a {
     flex-direction: row;
 }
 
+#tgLink {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 32px;
+    height: 32px;
+    background: var(
+      --Gray-gradient,
+      linear-gradient(302deg, #1c1c1e 0%, #48484a 100%)
+    );
+    margin-top: 10px;
+  }
+  #text_tgLink > p > a {
+    color: var(--White, #ececec);
+    text-align: center;
+  
+    /* Default/Bold/Footnote */
+    font-family: Exo2;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 138.462% */
+    letter-spacing: -0.078px;
+  }
+  #text_tgLink > p {
+    color: #a5a5a5;
+    text-align: center;
+  
+    /* Default/Regular/Caption2 */
+    font-family: Exo2;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 13px; /* 118.182% */
+    letter-spacing: 0.066px;
+  }
+ 
