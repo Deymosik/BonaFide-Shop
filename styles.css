@@ -31,7 +31,7 @@ main {
 }
 
 #username {
-    font-size: 20px !important;
+    font-size: 16px;
     color: var(--tg-theme-text-color);
     margin-left: 6px;
 }
@@ -130,7 +130,7 @@ a:hover {
 .product-card {
     text-align: center;
     margin-bottom: 20px;
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 11px 0px var(--tg-theme-bg-color);
     max-width: 160px;
@@ -141,7 +141,7 @@ a:hover {
 .product-card img {
     width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .product-name{
@@ -356,6 +356,7 @@ a:hover {
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
+    flex-direction: column;
 }
 
 .avatar-с {
@@ -383,6 +384,7 @@ a:hover {
     color: var(--tg-theme-button-text-color);
     border: none;
     border-radius: 15px;
+    font-family: 'Exo2';
 }
 .priv {
     display: flex;
