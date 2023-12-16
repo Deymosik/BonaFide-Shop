@@ -123,5 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 
-
+    $(document).ready(function(){
+        $('.carousel').slick({
+          dots: false, // Показывать точки для навигации
+          infinite: true, // Зацикленная карусель
+          speed: 300, // Скорость анимации
+          slidesToShow: 3, // Количество видимых слайдов
+          slidesToScroll: 2 // Количество слайдов, пролистываемых за раз
+        });
+      });
 
