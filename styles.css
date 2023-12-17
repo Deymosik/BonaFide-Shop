@@ -186,10 +186,6 @@ a {
 
 .slide {
     flex: 0 0 calc(33.333% - 10px); /* 33.333% - 10px, чтобы уместить 3 блока на экране с отступами */
-    margin-right: 5px;
-    margin-left: 5px;
-    height: 120px; /* Высота блока */
-    text-align: center;
     line-height: 100px; /* Выравнивание по центру */
     color: var(--tg-theme-text-color);
     font-size: 24px;
