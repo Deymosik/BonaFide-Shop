@@ -9,22 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector('.slider');
-
-    setInterval(() => {
-        const firstSlide = slider.children[0];
-        slider.style.transition = "transform 0.5s ease-in-out";
-        slider.style.transform = "translateX(-" + (firstSlide.offsetWidth + 10) + "px)"; /* 10px - отступ между блоками */
-        
-        setTimeout(() => {
-            slider.style.transition = "none";
-            slider.appendChild(firstSlide);
-            slider.style.transform = "translateX(0)";
-        }, 500); /* 0.5 секунды, согласно значению transition */
-    }, 3000); /* 3 секунды, согласно вашему требованию */
-});
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -128,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
           dots: false, // Показывать точки для навигации
           infinite: true, // Зацикленная карусель
           speed: 300, // Скорость анимации
-          slidesToShow: 3, // Количество видимых слайдов
+          slidesToShow: 4, // Количество видимых слайдов
           slidesToScroll: 2 // Количество слайдов, пролистываемых за раз
         });
       });
