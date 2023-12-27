@@ -464,16 +464,6 @@ a {
 .slick-next {
   display: none !important;
 }
-
-.scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-  
-  .scroll-content {
-    display: inline-block;
-  }
   
   .block {
     width: 100px; /* Ширина блока */
