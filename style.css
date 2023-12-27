@@ -4,19 +4,23 @@
 }
 
 /* Обнуление стилей для начала */
-* {
+body,
+h1,
+p {
     margin: 0;
     padding: 0;
+    font-family: 'Exo2';
     line-height: 1.6;
 }
 body{
-    background-color: var(--tg-theme-secondary-bg-color);
-    font-family: 'Exo2', sans-serif;
+    /*background: url('img/аппв.jpg') no-repeat fixed center;
+    background-size: cover;*/
+    background-color: var(--tg-theme-bg-color);
     overflow-x: hidden;
 }
 html{
     overflow-x: hidden;
-    max-width: 600px;
+    max-width: 700px;
 }
 
 /* Стили для основного контента */
@@ -127,7 +131,7 @@ a {
     margin-bottom: 20px;
     background-color: var(--tg-theme-secondary-bg-color);
     border-radius: 10px;
-    box-shadow: 0 0 11px 0 var(--tg-theme-bg-color);
+    box-shadow: 0 0 11px 0px var(--tg-theme-bg-color);
     max-width: 160px;
     display: flex;
     flex-direction: column;
@@ -460,13 +464,23 @@ a {
 .slick-next {
   display: none !important;
 }
+
+.scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
   
-.block {
-    width: 95px; /* Ширина блока */
-    height: 95px; /* Высота блока */
+  .scroll-content {
+    display: inline-block;
+  }
+  
+  .block {
+    width: 100px; /* Ширина блока */
+    height: 100px; /* Высота блока */
     background-color: #ccc; /* Цвет фона блока */
     display: inline-block;
-    margin: 5px; /* Отступ между блоками */
+    margin: 10px; /* Отступ между блоками */
   }
 
   .block {
