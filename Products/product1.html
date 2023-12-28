@@ -12,26 +12,6 @@
 </head>
 <body>
 
-<script>
-    const backButton = Telegram.WebApp.BackButton;
-
-    // Показывать кнопку только если есть GET параметры
-    // Показывать кнопку только если есть параметры
-    // и страница не главная
-    if (window.location.search && window.location.pathname !== 'index.html') {
-
-        backButton.show();
-
-    } else {
-
-        backButton.hide();
-
-    }
-    backButton.onClick(() => {
-        history.back();
-    });
-</script>
-
     <div class="slideshow-container">
         <div class="slides">
             <div class="slide"><img src="img/1.jpg"></div>
@@ -131,15 +111,15 @@
           }
         }
       </script>
-    
-    
-    
-    
+
+
+
+
     </head>
-    
+
     <body>
-    
-    
+
+
       <div id="accordion" class="accordion" style="margin: 1rem auto;">
         <div class="accordion__item">
           <div class="accordion__header">
@@ -214,7 +194,7 @@
           </div>
         </div>
       </div>
-    
+
       <script>
         new ItcAccordion(document.querySelector('.accordion'), {
           alwaysOpen: true
@@ -223,6 +203,6 @@
 
 
 </main>
-<script src="app.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

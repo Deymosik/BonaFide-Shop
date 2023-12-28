@@ -87,7 +87,24 @@ document.addEventListener('DOMContentLoaded', function() {
     else {
 
     }
-    
+
+const backButton = Telegram.WebApp.BackButton;
+
+// Показывать кнопку только если есть GET параметры
+// Показывать кнопку только если есть параметры
+// и страница не главная
+if (window.location.search && window.location.pathname !== 'index.html') {
+
+    backButton.show();
+
+} else {
+
+    backButton.hide();
+
+}
+backButton.onClick(() => {
+    history.back();
+});
 
     $(document).ready(function(){
         $('.carousel').slick({
