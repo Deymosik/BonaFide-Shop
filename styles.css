@@ -98,7 +98,7 @@ a {
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--tg-theme-secondary-bg-color);
+    border: 2px solid var(--tg-theme-bg-color);
 }
 
 .product-item p {
