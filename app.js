@@ -77,12 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.log("Пользовательские данные недоступны.");
     }
-
         Telegram.WebApp.expand();
-
-        
-        
-        
     });
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
