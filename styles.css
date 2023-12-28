@@ -120,10 +120,11 @@ a {
 }
 
 .product-grid {
-    display: flex;
+    display: grid;
     justify-content: space-around;
-    flex-wrap: wrap;
     margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .product-card {
@@ -132,7 +133,7 @@ a {
     background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 11px 0 var(--tg-theme-secondary-bg-color);
-    max-width: 160px;
+    max-width: 185px;
     display: flex;
     flex-direction: column;
 }
