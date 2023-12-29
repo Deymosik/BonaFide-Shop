@@ -498,10 +498,3 @@ a {
     background-color: #777; /* Цвет фона при наведении */
 }
 
-
-div.superellipse {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    clip-path: path("M 0 100 Q 0 0 100 0 Q 200 0 200 100 Q 200 200 100 200 Q 0 200 0 100 Z");
-}
