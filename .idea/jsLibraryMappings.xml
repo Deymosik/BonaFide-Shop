@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{telegram-web-app}" />
+    <file url="PROJECT" libraries="{jquery-3.6.0, slick-carousel, telegram-web-app}" />
   </component>
 </project>

@@ -77,7 +77,25 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       console.log("Пользовательские данные недоступны.");
     }
+
+        // Настроим поведение кнопки "Назад"
+        Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+
+        // Сообщаем Telegram Web App, что мы хотим перехватить действие "Назад"
+        Telegram.WebApp.BackButton.onClick(() => {
+            // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
+            // Например, вернуть пользователя на предыдущую страницу:
+            window.history.back();
+
+            // Или закрыть WebApp:
+            Telegram.WebApp.close();
+        });
+
         Telegram.WebApp.expand();
+
+
+
+
     });
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
@@ -88,23 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-const backButton = Telegram.WebApp.BackButton;
-
-// Показывать кнопку только если есть GET параметры
-// Показывать кнопку только если есть параметры
-// и страница не главная
-if (window.location.search && window.location.pathname !== 'index.html') {
-
-    backButton.show();
-
-} else {
-
-    backButton.hide();
-
-}
-backButton.onClick(() => {
-    history.back();
-});
 
     $(document).ready(function(){
         $('.carousel').slick({
