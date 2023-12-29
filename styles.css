@@ -455,10 +455,47 @@ a {
 }
   
   .block {
-    width: 100px; /* Ширина блока */
-    height: 100px; /* Высота блока */
+    width: 68px; /* Ширина блока */
+    height: 68px; /* Высота блока */
     background-color: #ccc; /* Цвет фона блока */
     display: inline-block;
-    margin: 10px; /* Отступ между блоками */
+    margin: 5px; /* Отступ между блоками */
     clip-path: path("M 61 0 c 16.0278 0 24.0416 0 29.0208 4.9792 a 17 17 0 0 1 0 0 c 4.9792 4.9792 4.9792 12.9931 4.9792 29.0208 L 95 61 c 0 16.0278 0 24.0416 -4.9792 29.0208 a 17 17 0 0 1 0 0 c -4.9792 4.9792 -12.9931 4.9792 -29.0208 4.9792 L 34 95 c -16.0278 0 -24.0416 0 -29.0208 -4.9792 a 17 17 0 0 1 0 0 c -4.9792 -4.9792 -4.9792 -12.9931 -4.9792 -29.0208 L 0 34 c 0 -16.0278 0 -24.0416 4.9792 -29.0208 a 17 17 0 0 1 0 0 c 4.9792 -4.9792 12.9931 -4.9792 29.0208 -4.9792 Z");
   }
+
+/* Скройте скролл бар для всех элементов */
+* {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Скройте скролл бар для элемента с классом scrollmenu */
+.scrollmenu {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Скройте скролл бар для Webkit-браузеров (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollmenu {
+    overflow: auto; /* Включите прокрутку, если содержимое не помещается */
+    white-space: nowrap; /* Отключите перенос строк */
+    margin: 10px 0;
+}
+
+.scrollmenu a {
+    display: inline-block; /* Сделайте ссылки в одну строку */
+    color: white; /* Цвет текста ссылок */
+    text-align: center; /* Выровняйте текст по центру */
+    padding: 14px; /* Отступы вокруг ссылок */
+    text-decoration: none; /* Уберите подчеркивание */
+}
+
+.scrollmenu a:hover {
+    background-color: #777; /* Цвет фона при наведении */
+}
+
+
