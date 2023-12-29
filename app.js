@@ -78,18 +78,21 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Пользовательские данные недоступны.");
     }
 
-        // Настроим поведение кнопки "Назад"
-        Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+// Импортируем SDK для mini app
+    import { WebApp } from "@twa-dev/SDK";
 
-        // Сообщаем Telegram Web App, что мы хотим перехватить действие "Назад"
-        Telegram.WebApp.BackButton.onClick(() => {
-            // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
-            // Например, вернуть пользователя на предыдущую страницу:
-            window.history.back();
+// Создаем экземпляр mini app
+    const app = new WebApp();
 
-            // Или закрыть WebApp:
-            Telegram.WebApp.close();
-        });
+// Включаем кнопку назад
+    app.sendEvent("web_app_setup_back_button", { enabled: true });
+
+// Обрабатываем событие нажатия кнопки назад
+    app.on("backButtonClicked", () => {
+        // Возвращаемся к предыдущему экрану или состоянию
+        // Например, если вы используете React Router, то можно сделать так:
+        // history.goBack();
+    });
 
         Telegram.WebApp.expand();
 
