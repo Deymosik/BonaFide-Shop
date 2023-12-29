@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     app.on("backButtonClicked", () => {
         // Возвращаемся к предыдущему экрану или состоянию
         // Например, если вы используете React Router, то можно сделать так:
-        // history.goBack();
+        history.goBack();
     });
 
         Telegram.WebApp.expand();
@@ -109,15 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-
-    $(document).ready(function(){
-        $('.carousel').slick({
-          dots: false, // Показывать точки для навигации
-          infinite: true, // Зацикленная карусель
-          speed: 300, // Скорость анимации
-          slidesToShow: 3, // Количество видимых слайдов
-          slidesToScroll: 2 // Количество слайдов, пролистываемых за раз
-        });
-      });
 
       

@@ -436,18 +436,6 @@ a {
     letter-spacing: 0;
   }
 
-  .carousel {
-    width: 100%;
-    display: block;
-    margin: 10px 0 10px 0;
-  }
-  
-  .carousel div {
-    width: 100%;
-    height: auto;
-    text-align: center;
-  }
-
   /* Скрыть кнопки навигации (Next и Previous) в Slick Carousel */
 .slick-prev,
 .slick-next {
