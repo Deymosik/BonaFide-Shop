@@ -93,43 +93,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Получаем все кнопки добавления в корзину
-let buttons = document.querySelectorAll(".product-button");
+// Получаем кнопку добавления в корзину
+var button = document.querySelector(".product-button");
 
-// Добавляем обработчик события клика на каждую кнопку
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function(event) {
-        // Отменяем действие по умолчанию (переход по ссылке)
-        event.preventDefault();
+// Добавляем обработчик события клика на кнопку
+button.addEventListener("click", function(event) {
+    // Отменяем действие по умолчанию (переход по ссылке)
+    event.preventDefault();
 
-        // Получаем id товара из атрибута data-id кнопки
-        let id = this.getAttribute("data-id");
+    // Получаем id товара из атрибута data-id кнопки
+    var id = this.getAttribute("data-id");
 
-        // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
-        let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
+    var cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-        // Увеличиваем количество товара с данным id на 1 или устанавливаем его равным 1, если его нет в корзине
-        cart[id] = (cart[id] || 0) + 1;
+    // Увеличиваем количество товара с данным id на 1 или устанавливаем его равным 1, если его нет в корзине
+    cart[id] = (cart[id] || 0) + 1;
 
-        // Сохраняем обновленные данные о корзине в локальное хранилище
-        localStorage.setItem("cart", JSON.stringify(cart));
+    // Сохраняем обновленные данные о корзине в локальное хранилище
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-        // Обновляем счетчик товаров в корзине
-        updateCartCount();
-    });
-}
+    // Обновляем счетчик товаров в корзине
+    updateCartCount();
+});
 
 // Функция для обновления счетчика товаров в корзине
 function updateCartCount() {
     // Получаем элемент счетчика
-    let count = document.querySelector(".cart-count");
+    var count = document.querySelector(".cart-count");
 
     // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
-    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    var cart = JSON.parse(localStorage.getItem("cart")) || {};
 
     // Считаем общее количество товаров в корзине
-    let total = 0;
-    for (let id in cart) {
+    var total = 0;
+    for (var id in cart) {
         total += cart[id];
     }
 
@@ -139,5 +137,6 @@ function updateCartCount() {
 
 // Вызываем функцию обновления счетчика при загрузке страницы
 updateCartCount();
+
 
 
