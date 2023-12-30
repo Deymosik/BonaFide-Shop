@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonaFide Shop</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Корзина</h1>
+        <div class="cart-list"></div>
+        <div class="cart-total">Итого: 0 руб.</div>
+        <a href="#" class="cart-button">Очистить корзину</a>
+    </main>
+    <script>
+        // Получаем элемент списка товаров в корзине
+        let list = document.querySelector(".cart-list");
+
+        // Получаем элемент итоговой суммы
+        let total = document.querySelector(".cart-total");
+
+        // Получаем элемент кнопки очистки корзины
+        let button = document.querySelector(".cart-button");
+
+        // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
+        let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+        // Создаем массив с данными о товарах (в реальном проекте они могут приходить с сервера)
+        let products = [
+            {id: "1", name: "AirPods Pro 2 Premium", price: 3390, image: "img/preview-1.jpg"},
+            {id: "2", name: "Товар 2", price: 2000, image: "t-2.jpeg"},
+            {id: "3", name: "Товар 3", price: 3000, image: "t-3.jpeg"}
+        ];
+
+        // Создаем переменную для хранения скидки в процентах
+        let discount = 5;
+
+        // Функция для отображения списка товаров в корзине
+        function showCart() {
+            // Очищаем список от предыдущего содержимого
+            list.innerHTML = "";
+
+            // Считаем итоговую сумму
+            let sum = 0;
+
+            // Считаем количество товаров в корзине
+            let count = 0;
+
+            // Перебираем все товары в корзине
+            for (let id in cart) {
+                // Находим товар с соответствующим id в массиве products
+                let product = products.find(function (p) {
+                    return p.id == id;
+                });
+
+                // Если такой товар есть, то добавляем его в список
+                if (product) {
+                    // Создаем элемент для товара в корзине
+                    let item = document.createElement("div");
+                    item.className = "cart-item";
+
+                    // Создаем элемент для изображения товара
+                    let image = document.createElement("img");
+                    image.className = "cart-image";
+                    image.src = product.image;
+
+                    // Создаем элемент для информации о товаре
+                    let info = document.createElement("div");
+                    info.className = "cart-info";
+
+                    // Создаем элемент для названия товара
+                    let name = document.createElement("div");
+                    name.className = "cart-name";
+                    name.textContent = product.name;
+
+                    // Создаем элемент для цены товара
+                    let price = document.createElement("div");
+                    price.className = "cart-price";
+                    price.textContent = product.price + " руб.";
+
+                    // Создаем элемент для количества товара
+                    let quantity = document.createElement("div");
+                    quantity.className = "cart-quantity";
+                    quantity.textContent = "Количество: " + cart[id];
+
+                    // Создаем элемент для кнопки удаления товара
+                    let deleting = document.createElement("a");
+                    deleting.className = "cart-delete";
+                    deleting.href = "#";
+                    deleting.textContent = "Удалить";
+                    deleting.setAttribute("data-id", id);
+
+                    // Добавляем все элементы в элемент для информации о товаре
+                    info.appendChild(name);
+                    info.appendChild(price);
+                    info.appendChild(quantity);
+                    info.appendChild(deleting);
+
+                    // Добавляем все элементы в элемент для товара в корзине
+                    item.appendChild(image);
+                    item.appendChild(info);
+
+                    // Добавляем элемент для товара в корзине в список
+                    list.appendChild(item);
+
+                    // Увеличиваем итоговую сумму на произведение цены и количества товара
+                    sum += product.price * cart[id];
+
+                    // Увеличиваем количество товаров в корзине на количество данного товара
+                    count += cart[id];
+                }
+            }
+
+            // Если количество товаров в корзине больше или равно двум, то применяем скидку
+            if (count >= 2) {
+                // Вычисляем сумму скидки
+                let discountAmount = sum * discount / 100;
+
+                // Вычитаем сумму скидки из итоговой суммы
+                sum -= discountAmount;
+
+                // Добавляем текст о скидке в итоговую сумму
+                total.textContent = "Итого: " + sum + " руб. (Скидка " + discount + "%: " + discountAmount + " руб.)";
+            } else {
+                // Устанавливаем текст итоговой суммы равным сумме всех товаров в корзине
+                total.textContent = "Итого: " + sum + " руб.";
+            }
+        }
+
+        // Вызываем функцию отображения списка товаров в корзине при загрузке страницы
+        showCart();
+
+        // Добавляем обработчик события клика на кнопку очистки корзины
+        button.addEventListener("click", function(event) {
+            // Отменяем действие по умолчанию (переход по ссылке)
+            event.preventDefault();
+
+            // Очищаем данные о корзине в локальном хранилище
+            localStorage.removeItem("cart");
+
+            // Очищаем список товаров в корзине
+            list.innerHTML = "";
+
+            // Устанавливаем текст итоговой суммы равным нулю
+            total.textContent = "Итого: 0 руб.";
+        });
+
+        // Добавляем обработчик события клика на кнопки удаления товаров
+        list.addEventListener("click", function(event) {
+            // Если клик был по кнопке удаления товара
+            if (event.target.className === "cart-delete") {
+                // Отменяем действие по умолчанию (переход по ссылке)
+                event.preventDefault();
+
+                // Получаем id товара из атрибута data-id кнопки
+                let id = event.target.getAttribute("data-id");
+
+                // Удаляем товар с данным id из данных о корзине в локальном хранилище
+                delete cart[id];
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                // Обновляем список товаров в корзине
+                showCart();
+            }
+        });
+    </script>
+</body>
+</html>
+
