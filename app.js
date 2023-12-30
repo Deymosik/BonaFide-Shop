@@ -102,10 +102,10 @@ button.addEventListener("click", function(event) {
     event.preventDefault();
 
     // Получаем id товара из атрибута data-id кнопки
-    var id = this.getAttribute("data-id");
+    let id = this.getAttribute("data-id");
 
     // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
-    var cart = JSON.parse(localStorage.getItem("cart")) || {};
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
     // Увеличиваем количество товара с данным id на 1 или устанавливаем его равным 1, если его нет в корзине
     cart[id] = (cart[id] || 0) + 1;
@@ -120,14 +120,14 @@ button.addEventListener("click", function(event) {
 // Функция для обновления счетчика товаров в корзине
 function updateCartCount() {
     // Получаем элемент счетчика
-    var count = document.querySelector(".cart-count");
+    let count = document.querySelector(".cart-count");
 
     // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
-    var cart = JSON.parse(localStorage.getItem("cart")) || {};
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
     // Считаем общее количество товаров в корзине
-    var total = 0;
-    for (var id in cart) {
+    let total = 0;
+    for (let id in cart) {
         total += cart[id];
     }
 
