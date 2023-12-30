@@ -129,7 +129,7 @@ function updateCartCount() {
 
     // Считаем общее количество товаров в корзине
     let total = 0;
-    for (var id in cart) {
+    for (let id in cart) {
         total += cart[id];
     }
 
