@@ -78,10 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Пользовательские данные недоступны.");
     }
 
-        Telegram.WebApp.expand();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.setFullScreenMode(true); // включить полноэкранный режим
+    Telegram.WebApp.enableClosingConfirmation(true); // включить подтверждение
 
 
-    });
+
+
+});
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
     if(bg === "light") {
