@@ -64,15 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+let tg = Telegram.WebApp;
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    let tg = Telegram.WebApp;
 
     tg.ready(); // Сразу вызываем ready, чтобы сообщить Telegram, что веб-приложение загружено
     tg.expand();
-
 
     // Получаем данные пользователя
     const user = Telegram.WebApp.initDataUnsafe.user;
@@ -85,17 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Пользовательские данные недоступны.");
     }
 
-
-
-
-
-
-
-
-
-
-
 });
+
+tg.viewportStableHeight();
+tg.isClosingConfirmationEnabled(true);
+
+tg.BackButton.show();
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
     if(bg === "light") {
