@@ -66,7 +66,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let tg = Telegram.WebApp;
 
+const backButton = Telegram.WebApp.BackButton;
 
+// Показывать кнопку только если есть GET параметры
+// Показывать кнопку только если есть параметры
+// и страница не главная
+if (window.location.search && window.location.pathname !== '/') {
+
+    backButton.show();
+
+} else {
+
+    backButton.hide();
+
+}
+backButton.onClick(() => {
+    history.back();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 
