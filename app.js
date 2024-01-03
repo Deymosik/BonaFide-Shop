@@ -68,34 +68,6 @@ let tg = Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-
-Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-
-// Сообщаем Telegram Web App, что мы хотим перехватить действие "Назад"
-Telegram.WebApp.BackButton.onClick(Backkk());
-
-Telegram.WebApp.BackButton.onClick(() => {
-
-    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
-    // Например, вернуть пользователя на предыдущую страницу:
-    window.history.back();
-
-    // Или закрыть WebApp:
-    //Telegram.WebApp.close();
-});
-
-function Backkk(){
-
-    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
-    // Например, вернуть пользователя на предыдущую страницу:
-    window.history.back();
-
-    // Или закрыть WebApp:
-    Telegram.WebApp.close();
-
-}
-
-
     document.addEventListener('DOMContentLoaded', function () {
 
         // Получаем данные пользователя
@@ -110,6 +82,18 @@ function Backkk(){
         }
 
     });
+
+Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+
+Telegram.WebApp.BackButton.onClick(() => {
+
+    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
+    // Например, вернуть пользователя на предыдущую страницу:
+    window.history.back();
+
+    // Или закрыть WebApp:
+    //Telegram.WebApp.close();
+});
 
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
