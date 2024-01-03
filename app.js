@@ -68,7 +68,16 @@ let tg = Telegram.WebApp;
 tg.ready();
 tg.expand();
 
+document.addEventListener('DOMContentLoaded', function() {
 
+    let backButton = new Telegram.WebApp.BackButton();
+
+    backButton.onClick(function () {
+
+        window.history.back();
+
+        })
+});
 
     document.addEventListener('DOMContentLoaded', function () {
 
