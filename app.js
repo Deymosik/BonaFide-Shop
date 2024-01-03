@@ -87,18 +87,12 @@ Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Наз
 
 Telegram.WebApp.BackButton.onClick(() => {
 
-    if (window.location.search && window.location.pathname !== '/') {
+    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
+    // Например, вернуть пользователя на предыдущую страницу:
+    window.history.go(-1);
 
-        Telegram.WebApp.BackButton.show();
-
-    } else {
-
-        Telegram.WebApp.BackButton.hide();
-
-    }
-    Telegram.WebApp.BackButton.onClick(() => {
-        history.back();
-    });
+    // Или закрыть WebApp:
+    //Telegram.WebApp.close();
 });
 
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
