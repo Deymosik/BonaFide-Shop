@@ -137,6 +137,7 @@ a {
     max-width: 185px;
     display: flex;
     flex-direction: column;
+
 }
 
 .product-card img {

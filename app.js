@@ -63,14 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+
+let tg = Telegram.WebApp
 document.addEventListener('DOMContentLoaded', function() {
-    // Сразу вызываем ready, чтобы сообщить Telegram, что веб-приложение загружено
-    Telegram.WebApp.ready();
-    
+
+    tg.ready(); // Сразу вызываем ready, чтобы сообщить Telegram, что веб-приложение загружено
+    tg.expand(); // Открываем на полный экран
+    tg.viewportStableHeight();
+    tg.isClosingConfirmationEnabled(true);
+    tg.BackButton.show();
+
+
     // Получаем данные пользователя
-    const user = Telegram.WebApp.initDataUnsafe.user;
+    const user = tg.initDataUnsafe.user;
     if (user) {
-      // Теперь у нас есть доступ к данным пользователя, например, к имени
+      // Теперь у нас есть доступ к данным пользователя
       const username = user.first_name +" "+ user.last_name; // Пример использования имени
       // Вставляем имя в элемент div с id="username"
       document.getElementById('username').textContent = username;
@@ -78,16 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Пользовательские данные недоступны.");
     }
 
-    Telegram.WebApp.expand();
-    Telegram.WebApp.setFullScreenMode(true); // включить полноэкранный режим
-    Telegram.WebApp.enableClosingConfirmation(true); // включить подтверждение
-
-
 
 
 });
-    Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
-    let bg = Telegram.WebApp.colorScheme;
+    tg.onEvent('themeChanged', 'setThemeClass');
+    let bg = tg.colorScheme;
     if(bg === "light") {
         
     }
