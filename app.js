@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 let tg = Telegram.WebApp;
-
+tg.ready();
 const backButton = Telegram.WebApp.BackButton;
 
 // Показывать кнопку только если есть GET параметры
