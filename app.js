@@ -67,7 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
 let tg = Telegram.WebApp;
 tg.ready();
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+
+    tg.ready(); // Сразу вызываем ready, чтобы сообщить Telegram, что веб-приложение загружено
+    tg.expand();
 
     let backButton = new Telegram.WebApp.BackButton();
 
@@ -76,13 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.history.back();
 
 
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-
-
-    tg.ready(); // Сразу вызываем ready, чтобы сообщить Telegram, что веб-приложение загружено
-    tg.expand();
+    })
 
     // Получаем данные пользователя
     const user = Telegram.WebApp.initDataUnsafe.user;
