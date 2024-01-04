@@ -83,23 +83,6 @@ tg.expand();
 
     });
 
-Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-
-Telegram.WebApp.BackButton.onClick(() => {
-
-    // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
-    // Например, вернуть пользователя на предыдущую страницу:
-    window.location.href = 'index.html';
-    //window.history.back(); return false;
-    // Или закрыть WebApp:
-    //Telegram.WebApp.close();
-});
-
-Telegram.WebApp.onEvent("backButtonClicked", function ()
-{
-    window.history.back(); return false;
-});
-
     Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
     if (bg === "light") {
