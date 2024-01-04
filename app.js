@@ -89,7 +89,8 @@ Telegram.WebApp.BackButton.onClick(() => {
 
     // Здесь ты можешь выполнить любые действия при нажатии на кнопку "Назад"
     // Например, вернуть пользователя на предыдущую страницу:
-    window.history.back(); return false;
+    window.location.href = 'index.html';
+    //window.history.back(); return false;
     // Или закрыть WebApp:
     //Telegram.WebApp.close();
 });
