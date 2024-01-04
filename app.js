@@ -99,7 +99,7 @@ tg.expand();
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function (event) {
             // Получаем id товара из атрибута data-id кнопки
-            let id = this.getAttribute("setParams");
+            let id = this.getAttribute("window.Telegram.WebApp.MainButton.setParams");
 
             // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
