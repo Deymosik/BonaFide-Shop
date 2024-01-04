@@ -37,12 +37,19 @@
     <a class="product-button" data-id="4">Добавить в корзину</a>
     <div class="cart-count">0</div>
 
+    <script>
+
+        tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+        tg.BackButton.onClick(() => {
+            window.history.back();
+            tg.BackButton.hide();
+        });
+
+        tg.MainButton.show();
+
+
+    </script>
       <script>
-          Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-          Telegram.WebApp.BackButton.onClick(() => {
-              window.history.back();
-              Telegram.WebApp.BackButton.hide();
-          });
         class ItcAccordion {
           constructor(target, config) {
             this._el = typeof target === 'string' ? document.querySelector(target) : target;
