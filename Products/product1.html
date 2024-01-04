@@ -41,8 +41,6 @@
         let tg = Telegram.WebApp;
 
         tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-        window.tg.MainButton.show(); // Показать кнопку MainButton
-        window.tg.MainButton.setText("Добавить"); // Установить текст кнопки
 
         tg.BackButton.onClick(() => {
             window.history.back();
@@ -50,8 +48,11 @@
             window.tg.MainButton.hide();
         });
 
-        window.tg.MainButton.onClick(() => {
-            window.tg.showPopup({
+        window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
+        window.Telegram.WebApp.MainButton.setText("Добавить"); // Установить текст кнопки
+
+        window.Telegram.WebApp.MainButton.onClick(() => {
+            window.Telegram.WebApp.showPopup({
                 title: "Товар добавлен в корзину",
                 message: "Вы можете перейти в корзину, либо продолжить покупки.",
                 buttons: [
