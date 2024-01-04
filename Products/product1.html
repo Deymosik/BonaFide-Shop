@@ -31,11 +31,6 @@
         <h2>AirPods Pro 2 Premium</h2>
         <h3>3390₽</h3>
     </div>
-    <a class="product-button" data-id="1">Добавить в корзину</a>
-    <a class="product-button" data-id="2">Добавить в корзину</a>
-    <a class="product-button" data-id="3">Добавить в корзину</a>
-    <a class="product-button" data-id="4">Добавить в корзину</a>
-    <div class="cart-count">0</div>
 
     <script>
         let tg = Telegram.WebApp;
@@ -45,11 +40,10 @@
         tg.BackButton.onClick(() => {
             window.history.back();
             tg.BackButton.hide();
-            window.tg.MainButton.hide();
+            window.Telegram.WebApp.MainButton.hide();
         });
 
-        window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
-        window.Telegram.WebApp.MainButton.setText("Добавить в корзину"); // Установить текст кнопки
+        window.Telegram.WebApp.MainButton.show.setText("Добавить в корзину"); // Показать кнопку MainButton
         window.Telegram.WebApp.MainButton.setParams({"data-id": "1"});
 
         window.Telegram.WebApp.MainButton.onClick(() => {
