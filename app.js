@@ -93,7 +93,7 @@ tg.expand();
 
 
 // Получаем все кнопки добавления в корзину
-    let buttons = document.querySelectorAll(".product-button");
+    let buttons = Telegram.WebApp.MainButton;
 
 // Добавляем обработчик события клика на каждую кнопку
     for (let i = 0; i < buttons.length; i++) {
