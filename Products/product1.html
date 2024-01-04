@@ -43,7 +43,8 @@
             window.Telegram.WebApp.MainButton.hide();
         });
 
-        window.Telegram.WebApp.MainButton.show.setText("Добавить в корзину"); // Показать кнопку MainButton
+        window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
+        window.Telegram.WebApp.MainButton.setText("Добавить в корзину");
         window.Telegram.WebApp.MainButton.setParams({"data-id": "1"});
 
         window.Telegram.WebApp.MainButton.onClick(() => {
