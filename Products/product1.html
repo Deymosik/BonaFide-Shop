@@ -41,12 +41,27 @@
         let tg = Telegram.WebApp;
 
         tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+        window.tg.MainButton.show(); // Показать кнопку MainButton
+        window.tg.MainButton.setText("Добавить"); // Установить текст кнопки
+
+        window.tg.MainButton.onClick(() => {
+            window.tg.showPopup({
+                title: "Товар добавлен в корзину",
+                message: "Вы можете перейти в корзину, либо продолжить покупки.",
+                buttons: [
+                    {
+                        text: "Закрыть",
+                        action: "close"
+                    }
+                ]
+            });
+        });
+
         tg.BackButton.onClick(() => {
             window.history.back();
             tg.BackButton.hide();
+            window.tg.MainButton.hide();
         });
-
-        tg.MainButton.show();
 
 
     </script>
