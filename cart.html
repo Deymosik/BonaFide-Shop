@@ -16,10 +16,10 @@
     </main>
 
     <script>
-        Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-        Telegram.WebApp.BackButton.onClick(() => {
+        tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+        tg.BackButton.onClick(() => {
             window.history.back();
-            Telegram.WebApp.BackButton.hide();
+            tg.BackButton.hide();
         });
     </script>
     <script>

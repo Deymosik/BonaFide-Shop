@@ -71,7 +71,7 @@ tg.expand();
     document.addEventListener('DOMContentLoaded', function () {
 
         // Получаем данные пользователя
-        const user = Telegram.WebApp.initDataUnsafe.user;
+        const user = tg.initDataUnsafe.user;
         if (user) {
             // Теперь у нас есть доступ к данным пользователя, например, к имени
             const username = user.first_name + " " + user.last_name; // Пример использования имени
@@ -83,7 +83,7 @@ tg.expand();
 
     });
 
-    Telegram.WebApp.onEvent('themeChanged', 'setThemeClass');
+    tg.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
     if (bg === "light") {
 
