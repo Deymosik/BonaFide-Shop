@@ -21,6 +21,28 @@
             window.history.back();
             tg.BackButton.hide();
         });
+
+        // Показать кнопку MainButton
+        window.Telegram.WebApp.MainButton.show();
+
+        // Установить текст кнопки
+        window.Telegram.WebApp.MainButton.setText("Добавить");
+
+        // Добавить обработчик события нажатия на кнопку
+        window.Telegram.WebApp.MainButton.onClick(() => {
+            // Показать попап с сообщением
+            window.Telegram.WebApp.showPopup({
+                title: "Вы нажали на кнопку",
+                message: "Это пример telegram mini app, которое реализует кнопку MainButton с надписью \"Добавить\" и показывает попап с сообщением при нажатии на нее.",
+                buttons: [
+                    {
+                        text: "Закрыть",
+                        action: "close"
+                    }
+                ]
+            });
+        });
+
     </script>
     <script>
         // Получаем элемент списка товаров в корзине
