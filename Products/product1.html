@@ -44,6 +44,12 @@
         window.tg.MainButton.show(); // Показать кнопку MainButton
         window.tg.MainButton.setText("Добавить"); // Установить текст кнопки
 
+        tg.BackButton.onClick(() => {
+            window.history.back();
+            tg.BackButton.hide();
+            window.tg.MainButton.hide();
+        });
+
         window.tg.MainButton.onClick(() => {
             window.tg.showPopup({
                 title: "Товар добавлен в корзину",
@@ -55,12 +61,6 @@
                     }
                 ]
             });
-        });
-
-        tg.BackButton.onClick(() => {
-            window.history.back();
-            tg.BackButton.hide();
-            window.tg.MainButton.hide();
         });
 
 
