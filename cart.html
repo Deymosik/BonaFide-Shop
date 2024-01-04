@@ -14,6 +14,14 @@
         <div class="cart-total">Итого: 0 руб.</div>
         <a href="#" class="cart-button">Очистить корзину</a>
     </main>
+
+    <script>
+        Telegram.WebApp.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
+        Telegram.WebApp.BackButton.onClick(() => {
+            window.history.back();
+            Telegram.WebApp.BackButton.hide();
+        });
+    </script>
     <script>
         // Получаем элемент списка товаров в корзине
         let list = document.querySelector(".cart-list");
