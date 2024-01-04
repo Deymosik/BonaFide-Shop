@@ -98,11 +98,8 @@ tg.expand();
 // Добавляем обработчик события клика на каждую кнопку
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function (event) {
-            // Отменяем действие по умолчанию (переход по ссылке)
-            event.preventDefault();
-
             // Получаем id товара из атрибута data-id кнопки
-            let id = this.getAttribute("data-id");
+            let id = this.getAttribute("setParams");
 
             // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
