@@ -46,12 +46,16 @@
             window.history.back();
             tg.BackButton.hide();
             window.tg.MainButton.hide();
+            updateCartCount();
         });
 
         window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
         window.Telegram.WebApp.MainButton.setText("Добавить в корзину"); // Установить текст кнопки
+        window.Telegram.WebApp.MainButton.setParams({"data-id": "1"});
 
         window.Telegram.WebApp.MainButton.onClick(() => {
+
+
             window.Telegram.WebApp.showPopup({
                 title: "Товар добавлен в корзину",
                 message: "Вы можете перейти в корзину, либо продолжить покупки.",
@@ -62,7 +66,7 @@
                     },
                     {
                         text: "Корзина",
-                        action: window.location.href = '/cart.html'
+                        action: "close"
                     }
                 ]
             });
