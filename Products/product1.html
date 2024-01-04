@@ -49,7 +49,7 @@
         });
 
         window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
-        window.Telegram.WebApp.MainButton.setText("Добавить"); // Установить текст кнопки
+        window.Telegram.WebApp.MainButton.setText("Добавить в корзину"); // Установить текст кнопки
 
         window.Telegram.WebApp.MainButton.onClick(() => {
             window.Telegram.WebApp.showPopup({
@@ -62,7 +62,7 @@
                     },
                     {
                         text: "Корзина",
-                        action: "close"
+                        action: window.location.href = '/cart.html'
                     }
                 ]
             });
