@@ -30,7 +30,7 @@
     <div class="product-info">
         <h2>AirPods Pro 2 Premium</h2>
         <h3>3390₽</h3>
-        <a href="#" class="product-button" data-id="1" style="color: var(--tg-theme-link-color)">Добавить в корзину</a>
+        <a href="/cart.html" class="product-button" data-id="1" style="color: var(--tg-theme-link-color)">Добавить в корзину</a>
     </div>
 
     <script>
@@ -72,8 +72,7 @@
         // Добавляем обработчик события клика на каждую кнопку
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", function(event) {
-                // Отменяем действие по умолчанию (переход по ссылке)
-                event.preventDefault();
+
 
                 // Получаем id товара из атрибута data-id кнопки
                 let id = this.getAttribute("data-id");
