@@ -40,6 +40,7 @@
 
         tg.BackButton.onClick(() => {
             window.history.back();
+            window.location.reload();
             tg.BackButton.hide();
             window.Telegram.WebApp.MainButton.hide();
         });
@@ -60,14 +61,14 @@
                     },
                     {
                         text: "Корзина",
-                        action: window.location.href = "../cart.html"
+                        action: "close"
                     }
                 ]
             });
         });
 
         // Получаем все кнопки добавления в корзину
-        let buttons = document.getElementById("window.Telegram.WebApp.MainButton.setParams");
+        let buttons = document.getElementById(window.Telegram.WebApp.MainButton.setParams({"data-id": "1"}));
 
         // Добавляем обработчик события клика на каждую кнопку
         for (let i = 0; i < buttons.length; i++) {
