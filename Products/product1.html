@@ -35,39 +35,31 @@
 
     <script>
         let tg = Telegram.WebApp;
-        let MainButton = WebApp.MainButton;
+        let MainButton = Telegram.WebApp.MainButton;
 
         tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-
-        tg.BackButton.onClick(() => {
-            window.history.back();
-            tg.BackButton.hide();
-            window.Telegram.WebApp.MainButton.hide();
-            //window.location.reload();
-        });
-
         window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
         window.Telegram.WebApp.MainButton.setText("Добавить в корзину");
         // задаем data-id для кнопки
         MainButton.setDataId("1");
 
-        window.Telegram.WebApp.MainButton.onClick(() => {
+        //window.Telegram.WebApp.MainButton.onClick(() => {
 
-            window.Telegram.WebApp.showPopup({
-                title: "Товар добавлен в корзину",
-                message: "Вы можете перейти в корзину, либо продолжить покупки.",
-                buttons: [
-                    {
-                        text: "Закрыть",
-                        action: "close"
-                    },
-                    {
-                        text: "Корзина",
-                        action: "close"
-                    }
-                ]
-            });
-        });
+        //    window.Telegram.WebApp.showPopup({
+        //        title: "Товар добавлен в корзину",
+        //        message: "Вы можете перейти в корзину, либо продолжить покупки.",
+        //        buttons: [
+        //            {
+        //                text: "Закрыть",
+        //                action: "close"
+        //            },
+        //            {
+        //                text: "Корзина",
+        //                action: "close"
+        //            }
+        //        ]
+        //    });
+        //});
 
 
 
@@ -116,7 +108,12 @@
         // Вызываем функцию обновления счетчика при загрузке страницы
         updateCartCount();
 
-
+        tg.BackButton.onClick(() => {
+            window.history.back();
+            tg.BackButton.hide();
+            window.Telegram.WebApp.MainButton.hide();
+            //window.location.reload();
+        });
 
 
     </script>
