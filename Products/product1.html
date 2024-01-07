@@ -61,6 +61,12 @@
         //    });
         //});
 
+        tg.BackButton.onClick(() => {
+            window.history.back();
+            tg.BackButton.hide();
+            window.Telegram.WebApp.MainButton.hide();
+            //window.location.reload();
+        });
 
 
         // Получаем ссылку на главную кнопку
@@ -108,12 +114,7 @@
         // Вызываем функцию обновления счетчика при загрузке страницы
         updateCartCount();
 
-        tg.BackButton.onClick(() => {
-            window.history.back();
-            tg.BackButton.hide();
-            window.Telegram.WebApp.MainButton.hide();
-            //window.location.reload();
-        });
+
 
 
     </script>
