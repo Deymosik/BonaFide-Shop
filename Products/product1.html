@@ -35,31 +35,8 @@
 
     <script>
         let tg = Telegram.WebApp;
-        let MainButton = Telegram.WebApp.MainButton;
 
         tg.BackButton.show(); // Это покажет кнопку "Назад", если она скрыта
-        window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
-        window.Telegram.WebApp.MainButton.setText("Добавить в корзину");
-        // задаем data-id для кнопки
-        MainButton.setDataId("1");
-
-        //window.Telegram.WebApp.MainButton.onClick(() => {
-
-        //    window.Telegram.WebApp.showPopup({
-        //        title: "Товар добавлен в корзину",
-        //        message: "Вы можете перейти в корзину, либо продолжить покупки.",
-        //        buttons: [
-        //            {
-        //                text: "Закрыть",
-        //                action: "close"
-        //            },
-        //            {
-        //                text: "Корзина",
-        //                action: "close"
-        //            }
-        //        ]
-        //    });
-        //});
 
         tg.BackButton.onClick(() => {
             window.history.back();
@@ -68,30 +45,55 @@
             //window.location.reload();
         });
 
+        window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
+        window.Telegram.WebApp.MainButton.setText("Добавить в корзину");
+        window.Telegram.WebApp.MainButton.setDataId("1");
 
-        // Получаем ссылку на главную кнопку
-        let buttons = [MainButton];
+        window.Telegram.WebApp.MainButton.onClick(() => {
 
-        // Добавляем обработчик события клика на кнопку
-        buttons[0].addEventListener("click", function(event) {
-            // Отменяем действие по умолчанию (переход по ссылке)
-            event.preventDefault();
-
-            // Получаем id товара из главной кнопки
-            let id = MainButton.getDataId();
-
-            // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
-            let cart = JSON.parse(localStorage.getItem("cart")) || {};
-
-            // Увеличиваем количество товара с данным id на 1 или устанавливаем его равным 1, если его нет в корзине
-            cart[id] = (cart[id] || 0) + 1;
-
-            // Сохраняем обновленные данные о корзине в локальное хранилище
-            localStorage.setItem("cart", JSON.stringify(cart));
-
-            // Обновляем счетчик товаров в корзине
-            updateCartCount();
+            window.Telegram.WebApp.showPopup({
+                title: "Товар добавлен в корзину",
+                message: "Вы можете перейти в корзину, либо продолжить покупки.",
+                buttons: [
+                    {
+                        text: "Закрыть",
+                        action: "close"
+                    },
+                    {
+                        text: "Корзина",
+                        action: "close"
+                    }
+                ]
+            });
         });
+
+
+
+        // Получаем все кнопки добавления в корзину
+        let buttons = document.querySelectorAll(".product-button");
+
+        // Добавляем обработчик события клика на каждую кнопку
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function(event) {
+                // Отменяем действие по умолчанию (переход по ссылке)
+                event.preventDefault();
+
+                // Получаем id товара из атрибута data-id кнопки
+                let id = this.getAttribute("data-id");
+
+                // Получаем данные о корзине из локального хранилища или создаем пустой объект, если их нет
+                let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+                // Увеличиваем количество товара с данным id на 1 или устанавливаем его равным 1, если его нет в корзине
+                cart[id] = (cart[id] || 0) + 1;
+
+                // Сохраняем обновленные данные о корзине в локальное хранилище
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                // Обновляем счетчик товаров в корзине
+                updateCartCount();
+            });
+        }
 
         // Функция для обновления счетчика товаров в корзине
         function updateCartCount() {
@@ -113,9 +115,6 @@
 
         // Вызываем функцию обновления счетчика при загрузке страницы
         updateCartCount();
-
-
-
 
     </script>
       <script>
