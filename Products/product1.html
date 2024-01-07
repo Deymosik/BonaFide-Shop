@@ -40,9 +40,9 @@
 
         tg.BackButton.onClick(() => {
             window.history.back();
-            window.location.reload();
             tg.BackButton.hide();
             window.Telegram.WebApp.MainButton.hide();
+            window.location.reload();
         });
 
         window.Telegram.WebApp.MainButton.show(); // Показать кнопку MainButton
