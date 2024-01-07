@@ -64,7 +64,7 @@
             for (let id in cart) {
                 // Находим товар с соответствующим id в массиве products
                 let product = products.find(function (p) {
-                    return p.id == id;
+                    return p.id === id;
                 });
 
                 // Если такой товар есть, то добавляем его в список
