@@ -131,7 +131,7 @@ a {
 .product-card {
     text-align: center;
     margin-bottom: 20px;
-    background-color: var(--tg-theme-section-header-text-color);
+    background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 11px 0 var(--tg-theme-secondary-bg-color);
     max-width: 185px;
