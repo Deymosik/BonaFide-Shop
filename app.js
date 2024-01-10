@@ -68,6 +68,7 @@ let tg = Telegram.WebApp;
 tg.ready();
 tg.expand();
 
+
     document.addEventListener('DOMContentLoaded', function () {
 
         // Получаем данные пользователя
@@ -83,13 +84,16 @@ tg.expand();
 
     });
 
-    tg.onEvent('themeChanged', 'setThemeClass');
+tg.onEvent('themeChanged', 'setThemeClass');
     let bg = Telegram.WebApp.colorScheme;
     if (bg === "light") {
-
+        document.body.classList.add("light-theme");
+        document.body.classList.remove("dark-theme");
     } else {
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("light-theme");
+}
 
-    }
 
 
 // Получаем все кнопки добавления в корзину

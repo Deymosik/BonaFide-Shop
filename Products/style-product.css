@@ -1,10 +1,10 @@
 @font-face {
-    font-family: Exo2;
+    font-family: 'Exo2', sans-serif;
     src: url(fonts/Exo2-VariableFont_wght.ttf);
 }
 
 body {
-    font-family: Exo2;
+    font-family: 'Exo2', sans-serif;
     line-height: 1.5;
     margin: 0;
     background-color: var(--tg-theme-bg-color);
@@ -76,9 +76,9 @@ a.prev:hover, a.next:hover {
 }
 .product-info h3{
    margin: 0;
-   color: #ff6a07; /* Оранжевый цвет для выделения цены */
+   color: var(--tg-theme-accent-text-color); /* Оранжевый цвет для выделения цены */
    font-size: 24px;
-   font-family: Exo2;
+    font-family: 'Exo2', sans-serif;
 }
 
 *,
@@ -116,6 +116,16 @@ a.prev:hover, a.next:hover {
   background-size: 1.25rem;
   content: "";
   transition: transform 0.2s ease-out;
+}
+
+/* Светлая тема */
+.light-theme img {
+    filter: none; /* Оставляем цвет по умолчанию */
+}
+
+/* Темная тема */
+.dark-theme img {
+    filter: invert(100%); /* Инвертируем цвет на противоположный */
 }
     
 .accordion__item_show .accordion__header::after,
@@ -180,6 +190,28 @@ audio {
     color: var(--tg-theme-text-color);
     font-size: 24px;
     border-radius: 10px;
+}
+
+/* Светлая тема */
+.light-theme img {
+    filter: none; /* Оставляем цвет по умолчанию */
+}
+
+/* Темная тема */
+.dark-theme img {
+    filter: invert(100%); /* Инвертируем цвет на противоположный */
+}
+
+.product-button{
+    background-color: var(--tg-theme-button-color);
+    width: 55%;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Exo2', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--tg-theme-button-text-color);
 }
 
 
