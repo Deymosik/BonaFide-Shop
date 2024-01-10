@@ -1,0 +1,84 @@
+/* Общие стили для всей страницы */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    overflow-x: hidden;
+    max-width: 600px;
+}
+
+/* Стили для основного контента */
+main {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin: 20px;
+}
+
+/* Параграф с описанием */
+p {
+    font-size: 18px;
+    color: #666;
+    margin: 10px;
+}
+
+/* Контейнер для служб доставки */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Каждая служба доставки занимает половину ширины контейнера */
+#sdek, #post {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Заголовок каждой службы доставки */
+#sdek h2, #post h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin: 10px;
+}
+
+/* Радио-кнопка для выбора службы доставки */
+input[type=radio] {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Кнопка для подтверждения выбора */
+button {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+/* Медиа-запрос для адаптации под мобильные телефоны */
+@media (max-width: 600px) {
+    /* Каждая служба доставки занимает всю ширину контейнера */
+    #sdek, #post {
+        width: 100%;
+    }
+}
