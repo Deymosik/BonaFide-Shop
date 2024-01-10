@@ -549,3 +549,8 @@ a {
     color: var(--tg-theme-text-color);
 }
 
+.cart-count {
+    color: var(--tg-theme-text-color);
+    font-weight: bold;
+}
+
