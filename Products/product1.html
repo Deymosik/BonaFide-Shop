@@ -74,7 +74,7 @@
 
         // Добавляем обработчик события клика на каждую кнопку
         for (let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener("click", function(event) {
+            buttons[i].addEventListener("click", ()=> {
                 // Отменяем действие по умолчанию (переход по ссылке)
                 //event.preventDefault();
 
@@ -110,7 +110,7 @@
             }
 
             // Устанавливаем текст счетчика равным общему количеству товаров
-            count.textContent = total;
+            count.textContent = String(total);
         }
 
         // Вызываем функцию обновления счетчика при загрузке страницы
@@ -150,7 +150,7 @@
             }
             elBody.style['display'] = 'block';
             const height = elBody.offsetHeight;
-            elBody.style['height'] = 0;
+            elBody.style['height'] = "0";
             elBody.style['overflow'] = 'hidden';
             elBody.style['transition'] = `height ${this._config.duration}ms ease`;
             elBody.classList.add('collapsing');
@@ -176,7 +176,7 @@
             elBody.style['height'] = `${elBody.offsetHeight}px`;
             elBody.offsetHeight;
             elBody.style['display'] = 'block';
-            elBody.style['height'] = 0;
+            elBody.style['height'] = "0";
             elBody.style['overflow'] = 'hidden';
             elBody.style['transition'] = `height ${this._config.duration}ms ease`;
             elBody.classList.remove('collapse');
