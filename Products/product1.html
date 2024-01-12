@@ -39,7 +39,9 @@
 
         tg.BackButton.onClick(() => {
             window.history.back();
+            if (this.window === window.index) {
             tg.BackButton.hide();
+            }
             window.Telegram.WebApp.MainButton.hide();
             //window.location.reload();
         });
