@@ -452,6 +452,14 @@ a {
     clip-path: path("M 61 0 c 16.0278 0 24.0416 0 29.0208 4.9792 a 17 17 0 0 1 0 0 c 4.9792 4.9792 4.9792 12.9931 4.9792 29.0208 L 95 61 c 0 16.0278 0 24.0416 -4.9792 29.0208 a 17 17 0 0 1 0 0 c -4.9792 4.9792 -12.9931 4.9792 -29.0208 4.9792 L 34 95 c -16.0278 0 -24.0416 0 -29.0208 -4.9792 a 17 17 0 0 1 0 0 c -4.9792 -4.9792 -4.9792 -12.9931 -4.9792 -29.0208 L 0 34 c 0 -16.0278 0 -24.0416 4.9792 -29.0208 a 17 17 0 0 1 0 0 c 4.9792 -4.9792 12.9931 -4.9792 29.0208 -4.9792 Z");
   }
 
+.grad-border {
+    width: 105px;
+    height: 105px;
+    background: radial-gradient(84.29% 136.58% at 6.86% 83.96%,#eb9c00 0,#ff4769 27.08%,#3d50ff 66.38%,#00b3ff 100%);
+    display: inline-block;
+    border-radius: 20px;
+}
+
 /* Скройте скролл бар для всех элементов */
 * {
     -ms-overflow-style: none; /* IE and Edge */
@@ -462,6 +470,8 @@ a {
 .scrollmenu {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 /* Скройте скролл бар для Webkit-браузеров (Chrome, Edge, Safari) */
@@ -481,10 +491,6 @@ a {
     text-align: center; /* Выровняйте текст по центру */
     padding: 14px; /* Отступы вокруг ссылок */
     text-decoration: none; /* Уберите подчеркивание */
-}
-
-.scrollmenu a:hover {
-    background-color: #777; /* Цвет фона при наведении */
 }
 
 .cart-item {
@@ -566,4 +572,31 @@ a {
     display: flex;
     align-items: center;
 }
+
+.statyi {
+    width: 98%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.statyi-border {
+    width: 100%;
+    height: 47px;
+    background: radial-gradient(84.29% 136.58% at 6.86% 83.96%,#eb9c00 0,#ff4769 27.08%,#3d50ff 66.38%,#00b3ff 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 
