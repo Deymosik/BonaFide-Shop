@@ -1,0 +1,103 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonaFide Shop</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        /* Используем цвета от telegram.webapp */
+        :root {
+            --primary: #0088cc;
+            --secondary: #f5f5f5;
+            --accent: #fa9e59;
+        }
+
+        /* Добавляем скругления к фотографиям и статьям */
+        .article {
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            margin-left: 10px;
+        }
+
+        .article-title {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .article-description {
+            color: var(--accent);
+        }
+
+        /* Делаем статьи ссылками */
+        .article-link {
+            text-decoration: none;
+        }
+
+        /* Адаптируем стили под мобильные устройства */
+        @media (max-width: 600px) {
+            .article {
+                flex-direction: column;
+            }
+
+            .article-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .article-content {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="article-list">
+    <!-- Первая статья -->
+    <a href="#" class="article-link">
+        <div class="article">
+            <img src="#" class="article-image">
+            <div class="article-content">
+                <div class="article-title">Как научиться программировать за 30 дней</div>
+                <div class="article-description">Эта статья расскажет вам о том, как вы можете освоить основы программирования за месяц, используя различные онлайн-ресурсы и практические задания.</div>
+            </div>
+        </div>
+    </a>
+    <!-- Вторая статья -->
+    <a href="#" class="article-link">
+        <div class="article">
+            <img src="#" class="article-image">
+            <div class="article-content">
+                <div class="article-title">Почему вам стоит попробовать язык Python</div>
+                <div class="article-description">Python - один из самых популярных и универсальных языков программирования в мире. В этой статье мы рассмотрим его особенности, преимущества и области применения.</div>
+            </div>
+        </div>
+    </a>
+    <!-- Третья статья -->
+    <a href="#" class="article-link">
+        <div class="article">
+            <img src="#" class="article-image">
+            <div class="article-content">
+                <div class="article-title">Как создать свой собственный сайт с нуля</div>
+                <div class="article-description">Создание сайта - это не так сложно, как кажется. В этой статье мы покажем вам, как вы можете создать свой собственный сайт с нуля, используя html, css и javascript.</div>
+            </div>
+        </div>
+    </a>
+</div>
+</body>
+</html>
